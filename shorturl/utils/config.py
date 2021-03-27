@@ -24,7 +24,7 @@ class worker:
 			pass
 
 		try:
-			self.__class__._REDIS_URL = os.environ["REDIS_URL"]
+			self.__class__._REDIS_URL = urlparse(os.environ["REDIS_URL"])
 		except:
 			pass
 
