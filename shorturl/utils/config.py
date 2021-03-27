@@ -24,7 +24,7 @@ class worker:
 			pass
 
 		try:
-			self.__class__._REDIS_URL = urlparse("redis://:pef0a186ef3b000d15585e1b1e40635f1420c29e0f18446ad12b668795ffaaf05@ec2-108-128-25-66.eu-west-1.compute.amazonaws.com:27670")
+			self.__class__._REDIS_URL = os.environ["REDIS_URL"]
 		except:
 			pass
 
