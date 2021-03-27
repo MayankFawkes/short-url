@@ -1,0 +1,21 @@
+.input-group {
+  padding: 10px 0px 10px 0px;
+}
+
+h1 {
+  padding: 20px;
+}
+section {
+  margin: 0 auto;
+  width: 80%;
+}
+footer {
+  border-top: 1px #ECECEC solid;
+  margin: 1em;
+  padding: 0.5em;
+}
+
+pre code {
+  background-color: #eee;
+  display: block;
+}

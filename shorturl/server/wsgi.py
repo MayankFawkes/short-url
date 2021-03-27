@@ -1,0 +1,1 @@
+from shorturl.server.app import app as application

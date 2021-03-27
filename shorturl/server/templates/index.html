@@ -1,4 +1,65 @@
-# Shorten URL
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="static/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script src="static/main.js"></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='ico.png') }}">
+
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<header class="page-header text-center">
+  <h1>{{ title }}</h1>
+  <a href="https://github.com/MayankFawkes/short-url">
+    <button type="submit" class="btn btn-primary btn-lg">Code on Github <span class="fa fa-github"></span></button>
+  </a>
+</header>
+
+
+<section>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Full URL</span>
+  </div>
+  <input type="text" id="url" class="form-control" placeholder="Enter url" aria-label="Enter url" aria-describedby="basic-addon1">
+  <span class="input-group-btn">
+        <button class="btn btn-primary" onclick="makeshort()" type="button" id="short-btn">Make</button>
+   </span>
+</div>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Shorte URL</span>
+  </div>
+   <input type="text" readonly="readonly" class="form-control" id="shorturl">
+   <span class="input-group-btn">
+      <button class="btn btn-secondary" onclick="clip('shorturl')" type="button" id="copy-url-btn">Copy</button>
+   </span>
+</div>
+
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">AUTH Key</span>
+  </div>
+   <input type="text" readonly="readonly" class="form-control" id="authkey">
+   <span class="input-group-btn">
+        <button class="btn btn-secondary" onclick="clip('authkey')" type="button" id="copy-auth-btn">Copy</button>
+   </span>
+</div>
+
+</section>
+
+<section class="content">
   <h2>API</h2>
   <p>
     The API endpoints listed below are available.
@@ -162,3 +223,12 @@
       5009    AUTH_FAILED
     </code>
   </pre>
+
+</section>
+
+<footer class="text-center">
+  Crafted by Mayank Gupta.
+</footer>
+
+</body>
+</html>
