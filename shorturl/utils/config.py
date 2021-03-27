@@ -24,7 +24,7 @@ class worker:
 			pass
 
 		try:
-			self.__class__._REDIS_URL = urlparse(os.environ["REDIS_URL"])
+			self.__class__._REDIS_URL = urlparse("redis://:pef0a186ef3b000d15585e1b1e40635f1420c29e0f18446ad12b668795ffaaf05@ec2-108-128-25-66.eu-west-1.compute.amazonaws.com:27670")
 		except:
 			pass
 
@@ -52,7 +52,7 @@ class worker:
 			return self._REDIS_URL.port
 
 	@property
-	def REDIS_PORT(self):
+	def REDIS_PASSWORD(self):
 		if self._REDIS_URL:
 			return self._REDIS_URL.password
 
@@ -61,8 +61,8 @@ work = worker()
 
 class redis_conf:
 	hostname = work.REDIS_HOSTNAME or "localhost"
-	port = work.REDIS_PORT or 6379
-	password = work.REDIS_PORT or ""
+	port = int(work.REDIS_PORT) or 6379
+	password = work.REDIS_PASSWORD or ""
 
 class server_conf:
 	hostname = "0.0.0.0"
