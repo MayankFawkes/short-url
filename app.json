@@ -2,6 +2,11 @@
   "name": "short-url",
   "description": "Light weight url shorten, easy to setup, redis python project.",
   "repository": "https://github.com/MayankFawkes/short-url",
+  "keywords": [
+    "short-url",
+    "url shortener",
+    "redis"
+  ],
 
   "image": "heroku/python",
   "addons": [
