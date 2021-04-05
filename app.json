@@ -1,0 +1,15 @@
+{
+  "name": "short-url",
+  "description": "Light weight url shorten, easy to setup, redis python project.",
+  "repository": "https://github.com/MayankFawkes/short-url",
+
+  "image": "heroku/python",
+  "addons": [
+    "heroku-redis:hobby-dev"
+  ],
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ]
+}
