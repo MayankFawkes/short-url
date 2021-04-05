@@ -18,7 +18,7 @@
     <code>
       docker-compose up -d
     </code>
-  </pre> Server will start in localhost:8000
+  </pre> Gunicorn server will start on localhost:8000
 </p>
 <h3>Heroku</h3>
 <a href="https://heroku.com/deploy">
