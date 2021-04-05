@@ -1,0 +1,7 @@
+setup:
+  addons:
+  - plan: heroku-redis:hobby-dev
+
+build:
+  docker:
+    web: Dockerfile
