@@ -61,7 +61,7 @@ work = worker()
 
 class redis_conf:
 	hostname = work.REDIS_HOSTNAME or "localhost"
-	port = int(work.REDIS_PORT) or 6379
+	port = work.REDIS_PORT or 6379
 	password = work.REDIS_PASSWORD or ""
 
 class server_conf:

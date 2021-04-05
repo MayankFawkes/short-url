@@ -31,7 +31,18 @@ function makeshort(){
 
 function auth_short(data){
 	if (data.err){
-		alert(data.msg); return;
+		Swal.fire({
+			icon: 'error',
+			title: 'Oops...',
+			text: data.msg
+		}); return;
+	}
+	if (data.message){
+		Swal.fire({
+			icon: 'error',
+			title: `Global: ${data.global}`,
+			text: `${data.message} Try after ${Math.floor(data.retry_after)} Seconds`
+		}); return;
 	}
 	window.document.getElementById("shorturl").value = `${location.protocol}//${location.host}/${data.code}`;
 	window.document.getElementById("authkey").value = data.auth;
@@ -40,3 +51,16 @@ function auth_short(data){
 function clip(what){
 	window.navigator.clipboard.writeText(window.document.getElementById(what).value)
 }
+
+document.onkeyup = function(e) {
+	if (e.which == 13){
+		makeshort();
+	}
+	else if (e.ctrlKey && e.which == 86) {
+		setTimeout(makeshort, 10);
+	}
+	else {
+		return;
+	}
+
+};
