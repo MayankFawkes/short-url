@@ -1,41 +1,39 @@
 # Shorten URL
-  <h2>API</h2>
-  <p>
-    The API endpoints listed below are available.
-  </p>
-  <h2>FEATURES</h2>
-  <p>
-    <ul>
-      <li>Faster with redis</li>
-      <li>Ratelimit on api with Gloabl IP ban</li>
-      <li>Light Weight & Easy to setup</li>
-      <li>Heroku Supported</li>
-    </ul>
-  </p>
-  <h2>INSTALLATION</h2>
-  <p>
+<h2>API</h2>
+<p> The API endpoints listed below are available. </p>
+<h2>Features</h2>
+<p>
+	<ul>
+		<li>Faster with redis</li>
+		<li>Ratelimit on api with Gloabl IP ban</li>
+		<li>Light Weight & Easy to setup</li>
+		<li>Heroku Supported</li>
+		<li>One command installation</li>
+	</ul>
+</p>
+<h2>Installation</h2>
+<h3>Docker</h3>
+<p>
   <pre>
     <code>
       docker-compose up -d
     </code>
-  </pre>
-      Server will start in localhost:8000
-  </p>
-  
+  </pre> Server will start in localhost:8000
+</p>
+<h3>Heroku</h3>
+<a href="https://heroku.com/deploy">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
 <!-- API:FIRST -->
-
-  <h3>POST /create/times</h3>
-  <p>
-    Create a shorter URL with Access Limits.
-  </p>
-  <h4>Request</h4>
-  <p>
-    Parameters:
-    <ul>
-      <li>url – [str] full url</li>
-      <li>times - [str, int] short code will be dead after TIMES visit</li>
-    </ul>
-  </p>
+<h3>POST /create/times</h3>
+<p> Create a shorter URL with Access Limits. </p>
+<h4>Request</h4>
+<p> Parameters:
+	<ul>
+		<li>url – [str] full url</li>
+		<li>times - [str, int] short code will be dead after TIMES visit</li>
+	</ul>
+</p>
   <pre>
     <code>
       curl -X POST \
@@ -43,29 +41,24 @@
       -H "Content-Type: application/json" {{ domain }}/create/times
     </code>
   </pre>
-  <h4>Response</h4>
+<h4>Response</h4>
   <pre>
     <code>
       {"Auth":"7398e225-836e-4f60-9732-140cbf135e10","Code":"USTKUu","Created\
        At":"1616766726.4898272","Fullurl":"https://google.com","Times":"3"}
     </code>
   </pre>
-
 <!-- API:END FIRST -->
 <!-- API:SECOND -->
-
-  <h3>POST /create/time</h3>
-  <p>
-    Create a shorter URL with time.
-  </p>
-  <h4>Request</h4>
-  <p>
-    Parameters:
-    <ul>
-      <li>url – [str] full url</li>
-      <li>time - [str, int] short code will be dead after TIME seconds</li>
-    </ul>
-  </p>
+<h3>POST /create/time</h3>
+<p> Create a shorter URL with time. </p>
+<h4>Request</h4>
+<p> Parameters:
+	<ul>
+		<li>url – [str] full url</li>
+		<li>time - [str, int] short code will be dead after TIME seconds</li>
+	</ul>
+</p>
   <pre>
     <code>
       curl -X POST \
@@ -73,29 +66,24 @@
       -H "Content-Type: application/json" {{ domain }}/create/time
     </code>
   </pre>
-  <h4>Response</h4>
+<h4>Response</h4>
   <pre>
     <code>
       {"Auth":"4f160d63-5ae2-4e28-a493-9c0e6b838768","Code":"vEXdWW","Created \
       At":"1616767277.039384","Fullurl":"https://google.com","Ttl In Seconds":"3"}
     </code>
   </pre>
-
 <!-- API:END SECOND -->
 <!-- API:THIRD -->
-
-  <h3>DELETE /delete</h3>
-  <p>
-    Delete create url.
-  </p>
-  <h4>Request</h4>
-  <p>
-    Parameters:
-    <ul>
-      <li>code – [str] shorte code</li>
-      <li>auth - [str] auth key of shorte code</li>
-    </ul>
-  </p>
+<h3>DELETE /delete</h3>
+<p> Delete create url. </p>
+<h4>Request</h4>
+<p> Parameters:
+	<ul>
+		<li>code – [str] shorte code</li>
+		<li>auth - [str] auth key of shorte code</li>
+	</ul>
+</p>
   <pre>
     <code>
       curl -X DELETE \
@@ -103,28 +91,23 @@
       -H "Content-Type: application/json" {{ domain }}/delete
     </code>
   </pre>
-  <h4>Response</h4>
+<h4>Response</h4>
   <pre>
     <code>
       HTTP Status 204 (No Content)
     </code>
   </pre>
-
 <!-- API:END THIRD -->
 <!-- API:FOURTH -->
-
-  <h3>POST /stats</h3>
-  <p>
-    Check your URL stats.
-  </p>
-  <h4>Request</h4>
-  <p>
-    Parameters:
-    <ul>
-      <li>code – [str] shorte code</li>
-      <li>auth - [str] auth key of shorte code</li>
-    </ul>
-  </p>
+<h3>POST /stats</h3>
+<p> Check your URL stats. </p>
+<h4>Request</h4>
+<p> Parameters:
+	<ul>
+		<li>code – [str] shorte code</li>
+		<li>auth - [str] auth key of shorte code</li>
+	</ul>
+</p>
   <pre>
     <code>
       curl -X POST \
@@ -132,16 +115,15 @@
       -H "Content-Type: application/json" {{ domain }}/stats
     </code>
   </pre>
-  <h4>Response</h4>
+<h4>Response</h4>
   <pre>
     <code>
       {"Access":"1","Auth":"78afb120-6ab1-4f7f-a3ce-bce8e7a65693","Code":"MK9qiH","Created \
       At":"1616767969.7141504","Fullurl":"https://google.com","Last Visit":"1616768016.03026","Times":"2"}
     </code>
   </pre>
-
 <!-- API:END FOURTH -->
-  <h2>HTTP RESPONSE</h2>
+<h2>HTTP RESPONSE</h2>
   <pre>
     <code>
       CODE                      MEANING
@@ -156,8 +138,7 @@
       5xx (SERVER ERROR)        The server had an error processing your request (these are rare).
     </code>
   </pre>
-
-  <h2>SERVER RESPONSE</h2>
+<h2>SERVER RESPONSE</h2>
   <pre>
     <code>
       CODE    MEANING
