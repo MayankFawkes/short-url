@@ -12,6 +12,16 @@
       <li>Heroku Supported</li>
     </ul>
   </p>
+  <h2>INSTALLATION</h2>
+  <p>
+  <pre>
+    <code>
+      docker-compose up -d
+    </code>
+  </pre>
+      Server will start in localhost:8000
+  </p>
+  
 <!-- API:FIRST -->
 
   <h3>POST /create/times</h3>
