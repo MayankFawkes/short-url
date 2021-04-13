@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+	<meta charset="UTF-8">
+	<title>Admin</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+	<link rel="stylesheet" href="static/styleadmin.css">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='ico.png') }}">
+
+</head>
+<body>
+	<section class="section can-blur">
+		<div class="container">
+			<div>
+				<h1 class="title is-3">
+					Admin Panel
+				</h1>
+
+				<div class="buttons login-btn" onclick="logout()">
+					<button class="button is-link is-focused">
+						<span>Logout!</span>
+						<span class="icon">
+							<i class="fas fa-arrow-right" aria-hidden="true"></i>
+						</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="section can-blur">
+		<nav class="level">
+			<div class="level-item has-text-centered">
+				<div>
+					<p class="heading">Total Links</p>
+					<p class="title" id="links">0</p>
+				</div>
+			</div>
+			<div class="level-item has-text-centered">
+				<div>
+					<p class="heading">Global IP Banned</p>
+					<p class="title" id="global">0</p>
+				</div>
+			</div>
+		</nav>
+	</section>
+
+	<section class="section can-blur ">
+		<nav class="breadcrumb is-centered" aria-label="breadcrumbs">
+			<ul>
+				<li><a onclick="FormBoxApply('delete')">Delete Link</a></li>
+				<li><a onclick="FormBoxApply('stats')">Link Stats</a></li>
+
+				<li><a onclick="FormBoxApply('unblock')">Unblock IP</a></li>
+				<li><a onclick="FormBoxApply('block')">Block IP</a></li>
+			</ul>
+		</nav>
+	</section>
+
+
+	<section class="section can-blur">
+		<nav class="level">
+			<div class="level-item is-centered">
+				<div class="box">
+					<h1 class="title is-1" id="formTitle" style="padding-bottom: 30px;">
+						Delete Short Link
+					</h1>
+					<div class="field">
+						<label class="label" id="formLabel">Enter Short Code/URL Code</label>
+						<div class="control">
+							<input class="input" id="data" type="text" placeholder="Enter....">
+						</div>
+					</div>
+					<button class="button is-link is-focused" id="formAction" onclick="submit('delete')">Delete</button>
+				</div>
+			</div>
+		</nav>
+	</section>
+
+<!-- footer start -->
+<footer class="footer has-background-dark has-text-light can-blur">
+	<div class="content has-text-centered">
+		<p> Made By <a href="https://github.com/MayankFawkes">Mayank Gupta</a> with <i class="fa fa-heart" aria-hidden="true"></i><br/>
+			Built with <a href="https://bulma.io">Bulma</a> and <i class="fab fa-bootstrap"></i><a href="https://getbootstrap.com/"> Bootstrap</a><br/>
+			&copy; 2021 | <i class="fab fa-github"></i> <a href="https://github.com/MayankFawkes/short-url">Github Project</a>
+		</p>
+	</div>
+</footer>
+<!-- footer end -->
+	<script src='https://cdn.jsdelivr.net/npm/sweetalert2@10'></script>
+	<script src="static/script.js"></script>
+</body>
+</html>

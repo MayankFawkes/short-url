@@ -65,6 +65,7 @@ class redis_conf:
 	password = work.REDIS_PASSWORD or ""
 
 class server_conf:
+	admin = os.environ.get("ADMIN_TOKEN") or "admin"
 	hostname = "0.0.0.0"
 	port = work.SERVER_PORT or 8000
 	threads = work.THREADS or 2

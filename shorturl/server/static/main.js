@@ -52,7 +52,7 @@ function clip(what){
 	window.navigator.clipboard.writeText(window.document.getElementById(what).value)
 }
 
-document.onkeyup = function(e) {
+document.getElementById("url").onkeyup = function(e) {
 	if (e.which == 13){
 		makeshort();
 	}
