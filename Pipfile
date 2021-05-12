@@ -10,7 +10,7 @@ itsdangerous = "==2.0.0"
 redis = "==3.5.3"
 Flask = "==1.1.2"
 Jinja2 = "==2.11.3"
-MarkupSafe = "==1.1.1"
+MarkupSafe = "==2.0.0"
 Werkzeug = "==2.0.0"
 flask-cors = "*"
 
